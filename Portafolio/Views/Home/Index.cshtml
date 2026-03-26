@@ -1,12 +1,77 @@
-﻿@{
+﻿@model Persona
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Soy Juan Felipe España Arias</h1>
+    <h1 class="display-4">@Model.Nombre (@Model.Edad)</h1>
     <h2>Soy un desarrrollador full stack especializado en tecnologías .NET y JavaScript</h2>
 
-    <img
-    id="foto"    
-    src="~/Imgs/foto.jpg" alt="foto de Felipe"/>
+    <img id="foto"
+         src="~/Imgs/foto.jpg" alt="foto de Felipe" />
+</div>
+
+
+<div class="text-center">
+    <img id="imagen-dotnet" src="~/Imgs/foto2.png" alt="Logo dotnet" />
+</div>
+
+<div class="row justify-content-center text-center bg-primary">
+    <div class="col col-md-7 seccion-bienvenida">
+        <h1>Te doy la bienvenida este portal.</h1>
+        <p>
+            Desarrollo, implementación y mantenimiento de soluciones de software orientadas a satisfacer las necesidades del usuario y optimizar procesos. Incluye el análisis de requerimientos, diseño de sistemas, programación, pruebas, documentación y mejora continua de aplicaciones. Se trabaja con diferentes lenguajes de programación, herramientas tecnológicas y metodologías ágiles para garantizar productos eficientes, seguros y de alta calidad.
+        </p>
+    </div>
+    
+</div>
+
+<div style="margin-top: -105px">
+    <div class="row justify-content-md-center text-center ">
+        <div class="col col-3 bg-white habilidades" style="border-radius: 15px 0 0 15px; box-shadow: 0 5px 5px 0 gray">
+            <h3>Back-end</h3>
+            <p>
+                Trabajo de desarrollo, pruebas automáticas, unitarias y puesta en producción.
+            </p>
+            <p class="text-primary cabecera">
+                Stack:
+            </p>
+            <p>
+                ASP.NET Core, SQL
+            </p>
+            <p class="text-primary cabecera">
+                Experiencia:
+            </p>
+            <ul>
+                <li>Web APIs</li>
+                <li>ASP.NET Core MVC</li>
+                <li>Blazor</li>
+                <li>Entity Framework Core</li>
+            </ul>
+
+        </div>
+
+        <div class="col col-3 bg-white habilidades" style="border-radius: 0 15px 15px 0; box-shadow: 0 5px 5px 0 gray">
+            <h3>Front-end</h3>
+            <p>
+                Crear front-ends los cuales cumplan con los requrimientos solicitados por el cliente.
+            </p>
+            <p class="text-primary cabecera">
+                Stack:
+            </p>
+            <p>
+                Angular, Blazor
+            </p>
+            <p class="text-primary cabecera">
+                Experiencia:
+            </p>
+            <ul>
+                <li>Angular Material</li>
+                <li>Bootstrap</li>
+                <li>jQuery</li>
+                <li>MarkDown</li>
+            </ul>
+        </div>
+    </div>
 </div>

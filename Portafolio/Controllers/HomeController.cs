@@ -1,20 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Portafolio.Models;
+using Portafolio.Servicios;
 using System.Diagnostics;
 
 namespace Portafolio.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IRepositorioProyectos repositorioProyectos;
+
+        public HomeController(IRepositorioProyectos repositorioProyectos)
+        {
+            this.repositorioProyectos = repositorioProyectos;
+        }
         public IActionResult Index()
         {
-            var persona = new Persona()
-            {
-                Nombre = "Juan Arias",
-                Edad = 99
-            };
-            return View(persona);
+            var proyecto = repositorioProyectos.ObtenerProyectos().Take(3).ToList();
+            var modelo = new HomeIndexViewModel() { Proyectos = proyecto };
+            return View(modelo);
         }
+
+       
 
         public IActionResult Privacy()
         {

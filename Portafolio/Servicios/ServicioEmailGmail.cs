@@ -4,7 +4,12 @@ using System.Net.Mail;
 
 namespace Portafolio.Servicios
 {
-    public class ServicioEmailGmail
+    public interface IServicioEmail
+    {
+        Task Enviar(ContactoViewModel contacto);
+    }
+
+    public class ServicioEmailGmail : IServicioEmail
     {
         private readonly IConfiguration configuration;
 
